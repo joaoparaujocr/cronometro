@@ -21,35 +21,37 @@ circleSeconds.style.strokeDashoffset = 0;
 circleMinutes.style.strokeDashoffset = 0;
 circleHours.style.strokeDashoffset = 0;
 
+document.addEventListener('click', (e) => {
+    let el = e.target.getAttribute('id');
+    if (el === 'play') {
+        buttonPlay.parentElement.removeChild(buttonPlay);
+        set = setInterval(() => {
+            timer();
+            progressBars(seconds, minute, hour);
+        }, 1000)
+    }
 
-buttonPlay.addEventListener('click', () => {
-    buttonPlay.parentElement.removeChild(buttonPlay);
-    set = setInterval(() => {
-        timer();
-        progressBars(seconds, minute, hour);
-    }, 1000)
-})
+    if (el === 'pause') {
+        boxButtons.insertBefore(buttonPlay, buttonPause);
+        setTimeout(() => {
+            clearInterval(set)
+        })
+    }
 
-buttonPause.addEventListener('click', () => {
-    boxButtons.insertBefore(buttonPlay, buttonPause);
-    setTimeout(() => {
-        clearInterval(set)
-    })
-})
-
-buttonStop.addEventListener('click', () => {
-    boxButtons.insertBefore(buttonPlay, buttonPause);
-    clearInterval(set);
-    seconds = 0;
-    minute = 0;
-    hour = 0;
-    circleSeconds.style.strokeDashoffset = 0;
-    circleMinutes.style.strokeDashoffset = 0;
-    circleHours.style.strokeDashoffset = 0;
-    spanHour.textContent = '00';
-    spanMinute.textContent = '00';
-    spanSeconds.textContent = '00';
-})
+    if (el === 'stop') {
+        boxButtons.insertBefore(buttonPlay, buttonPause);
+        clearInterval(set);
+        seconds = 0;
+        minute = 0;
+        hour = 0;
+        circleSeconds.style.strokeDashoffset = 0;
+        circleMinutes.style.strokeDashoffset = 0;
+        circleHours.style.strokeDashoffset = 0;
+        spanHour.textContent = '00';
+        spanMinute.textContent = '00';
+        spanSeconds.textContent = '00';
+    }
+});
 
 function verificarTimer(val) {
     return val < 10 ? '0' + val : val;
