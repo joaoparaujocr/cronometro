@@ -93,6 +93,9 @@ function widthDocument(){
         if (Number(i) || i == 0){
             num = num + `${i}`
         }
+        if(i === '.'){
+            break
+        }
     }
     if (num <= 500) {
         return 220;
