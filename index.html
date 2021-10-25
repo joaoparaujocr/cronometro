@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fec512a3cb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cronômetro</title>
+</head>
+
+<body>
+    <section class="container">
+        <div class="box-main">
+            <div class="box-timer">
+                <svg height="130" width="130">
+                    <circle cx="65" cy="65" r="60"></circle>
+                    <circle id="progress-hours" cx="65" cy="65" r="60"></circle>
+                </svg>
+                <span id="hour" class="number-timer">00</span>
+                <h5>Horas</h5>
+            </div>
+
+            <div class="box-timer">
+                <svg height="130" width="130">
+                    <circle cx="65" cy="65" r="60"></circle>
+                    <circle id="progress-minutes" cx="65" cy="65" r="60"></circle>
+                </svg>
+                <span id="minute" class="number-timer">00</span>
+                <h5>Minutos</h5>
+            </div>
+
+            <div class="box-timer">
+                <svg height="130" width="130">
+                    <circle cx="65" cy="65" r="60"></circle>
+                    <circle id="progress-seconds" cx="65" cy="65" r="60"></circle>
+                </svg>
+                <span id="seconds" class="number-timer">00</span>
+                <h5>Segundos</h5>
+            </div>
+        </div>
+
+        <div class="box-buttons">
+            <button id="play"><i class="fas fa-play"></i>Iniciar</button>
+            <button id="pause"><i class="fas fa-pause"></i>Pausar</button>
+            <button id="stop"><i class="fas fa-stop"></i>Zerar</button>
+        </div>
+    </section>
+    <!--container-->
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
