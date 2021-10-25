@@ -13,9 +13,6 @@ let hour = 0;
 let minute = 0;
 let seconds = 0;
 let set;
-let progressSeconds = (100 * seconds / 60);
-let progressMinutes = (100 * minute / 60);
-let progressHours = (100 * hour / 24);
 
 circleSeconds.style.strokeDashoffset = 0;
 circleMinutes.style.strokeDashoffset = 0;
@@ -79,9 +76,9 @@ function timer() {
 }
 
 function progressBars(s, m, h) {
-    progressSeconds = (100 * s / 60);
-    progressMinutes = (100 * m / 60);
-    progressHours = (100 * h / 24);
+    let progressSeconds = (100 * s / 60);
+    let progressMinutes = (100 * m / 60);
+    let progressHours = (100 * h / 24);
     circleSeconds.style.strokeDashoffset = 430 - (widthDocument() * (progressSeconds / 100));
     circleMinutes.style.strokeDashoffset = 430 - (widthDocument() * (progressMinutes / 100));
     circleHours.style.strokeDashoffset = 430 - (widthDocument() * (progressHours / 100));
