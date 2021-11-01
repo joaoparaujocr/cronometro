@@ -63,6 +63,7 @@ section.container{
 .box-timer svg circle:nth-child(2){
     stroke-dashoffset: 430;
     stroke: rgb(243, 40, 40);
+    transition: 1s;
 }
 
 .box-timer .number-timer{
